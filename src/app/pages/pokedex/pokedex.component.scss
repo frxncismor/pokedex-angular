@@ -1,0 +1,151 @@
+@import './../../../styles';
+
+:host {
+  background-color: $primary;
+}
+
+.pokedex-header{
+  background-color: $primary;
+  display: flex;
+  padding: 0 16px 0 16px;
+  justify-content: space-between;
+  align-items: center;
+  &__title {
+    font: $headline;
+    color: $gray-white;
+    display: flex;
+    align-items: center;
+    & svg {
+      height: 22px;
+      width: 22px;
+      margin: 0 10px 0 0;
+    }
+  }
+  &__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px 0 0;
+    position: relative;
+    & input {
+      width: 200px;
+      margin: 16px;
+      border-radius: 16px;
+      padding: 8px 16px;
+      @include inner-shadow;
+      border: none;
+      font: $body-3;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTM4LjcgNDAuODVMMjYuNjUgMjguOEMyNS42NSAyOS42NjY3IDI0LjQ4MzMgMzAuMzQxNyAyMy4xNSAzMC44MjVDMjEuODE2NyAzMS4zMDgzIDIwLjQgMzEuNTUgMTguOSAzMS41NUMxNS4zIDMxLjU1IDEyLjI1IDMwLjMgOS43NSAyNy44QzcuMjUgMjUuMyA2IDIyLjI4MzMgNiAxOC43NUM2IDE1LjIxNjcgNy4yNSAxMi4yIDkuNzUgOS43QzEyLjI1IDcuMiAxNS4yODMzIDUuOTUgMTguODUgNS45NUMyMi4zODMzIDUuOTUgMjUuMzkxNyA3LjIgMjcuODc1IDkuN0MzMC4zNTgzIDEyLjIgMzEuNiAxNS4yMTY3IDMxLjYgMTguNzVDMzEuNiAyMC4xODMzIDMxLjM2NjcgMjEuNTY2NyAzMC45IDIyLjlDMzAuNDMzMyAyNC4yMzMzIDI5LjczMzMgMjUuNDgzMyAyOC44IDI2LjY1TDQwLjk1IDM4LjdDNDEuMjUgMzguOTY2NyA0MS40IDM5LjMwODMgNDEuNCAzOS43MjVDNDEuNCA0MC4xNDE3IDQxLjIzMzMgNDAuNTE2NyA0MC45IDQwLjg1QzQwLjYgNDEuMTUgNDAuMjMzMyA0MS4zIDM5LjggNDEuM0MzOS4zNjY3IDQxLjMgMzkgNDEuMTUgMzguNyA0MC44NVpNMTguODUgMjguNTVDMjEuNTUgMjguNTUgMjMuODUgMjcuNTkxNyAyNS43NSAyNS42NzVDMjcuNjUgMjMuNzU4MyAyOC42IDIxLjQ1IDI4LjYgMTguNzVDMjguNiAxNi4wNSAyNy42NSAxMy43NDE3IDI1Ljc1IDExLjgyNUMyMy44NSA5LjkwODMzIDIxLjU1IDguOTUgMTguODUgOC45NUMxNi4xMTY3IDguOTUgMTMuNzkxNyA5LjkwODMzIDExLjg3NSAxMS44MjVDOS45NTgzMyAxMy43NDE3IDkgMTYuMDUgOSAxOC43NUM5IDIxLjQ1IDkuOTU4MzMgMjMuNzU4MyAxMS44NzUgMjUuNjc1QzEzLjc5MTcgMjcuNTkxNyAxNi4xMTY3IDI4LjU1IDE4Ljg1IDI4LjU1WiIgZmlsbD0iI0RDMEEyRCIvPgo8L3N2Zz4K");
+      background-repeat: no-repeat;
+      background-position: 12px 8px;
+      text-indent: 16px;
+      &:focus{
+        outline: none;
+      }
+    }
+    & .cancel {
+      position: absolute;
+      right: 40px;
+      background: $gray-white;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      height: 16px;
+      width: 16px;
+      display: grid;
+      place-content: center;
+      opacity: none;
+      &:hover {
+        transform: scale(1.1);
+      }
+      &.visible {
+        visibility: visible;
+      }
+    }
+  }
+  &__sort {
+    width: 32px;
+    height: 32px;
+    background-color: $gray-white;
+    border: none;
+    border-radius: 16px;
+    @include inner-shadow;
+    cursor: pointer;
+    position: relative;
+  }
+  & .sort-modal {
+    width: 113px;
+    height: 132px;
+    background-color: $primary;
+    position: absolute;
+    right: 0;
+    border-radius: 12px;
+    top: 43px;
+    @include drop-shadow-2;
+    &__title {
+      color: $gray-white;
+      font: $subtitle-2;
+      height: 48px;
+      display: grid;
+      place-content: center;
+    }
+    &__options {
+      background-color: $gray-white;
+      height: 80px;
+      margin: 0px 4px 4px 4px;
+      border-radius: 8px;
+      @include inner-shadow;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+      div {
+        width: 65px;
+        display: flex;
+        align-items: center;
+      }
+      div input {
+        width: 16px;
+        height: 12px;
+        font: $body-3;
+        margin: 0;
+        &[type="radio"] {
+          appearance: none;
+          border: 0.2px solid $gray-white;
+          background-color: $gray-white;
+          border-radius: 50%;
+          box-shadow: 0 0 0 1px $primary;
+          &:focus-visible {
+            outline-offset: 0;
+          }
+          &:hover {
+            border-width: 0;
+            cursor: pointer;
+          }
+          &:checked {
+            box-shadow: 0 0 0 1px $primary;
+            background-color: $primary;
+            border-width: 3px;
+          }
+        }
+      }
+      div label {
+        font: $body-3;
+        margin: 0 0 0 8px;
+        width: 100%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.pokedex-wrapper {
+  border: 4px solid $primary;
+  height: 100vh;
+  .pokedex-content {
+    border-radius: 10px;
+    height: 100vh;
+    border: 4px solid $primary;
+    margin: -4px;
+  }
+}

@@ -1,0 +1,67 @@
+@import './../../../styles';
+
+@mixin typeColor ($color) {
+  background-color: $color ;
+}
+.chip {
+  padding: 2px 8px;
+  color: $gray-white;
+  font: $subtitle-3;
+  height: 20px;
+  border-radius: 10px;
+}
+.bug {
+  @include typeColor($bug);
+}
+.dark {
+  @include typeColor($dark);
+}
+.dragon {
+  @include typeColor($dragon);
+}
+.electric {
+  @include typeColor($electric);
+}
+.fairy {
+  @include typeColor($fairy);
+}
+.fighting {
+  @include typeColor($fighting);
+}
+.fire {
+  @include typeColor($fire);
+}
+.flying {
+  @include typeColor($flying);
+}
+.ghost {
+  @include typeColor($ghost);
+}
+.normal {
+  @include typeColor($normal);
+}
+.grass {
+  @include typeColor($grass);
+}
+.ground {
+  @include typeColor($ground);
+}
+.ice {
+  @include typeColor($ice);
+}
+.poison {
+  @include typeColor($poison);
+}
+.psychic {
+  @include typeColor($psychic);
+}
+.rock {
+  @include typeColor($rock);
+}
+.steel {
+  @include typeColor($steel);
+}
+.water {
+  @include typeColor($water);
+}
+
